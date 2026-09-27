@@ -10,7 +10,7 @@ HANGUL_COUNT = HANGUL_END - HANGUL_START + 1  # 11,172 syllables
 
 def encode_bilingual(msg, shift):
     """
-    Encrypts BOTH English and Korean characters in the same message!
+    Encrypts or decrypts BOTH English and Korean characters in the same message!
 
     How it works:
         - English uppercase letters (A-Z) are shifted within A-Z
@@ -18,7 +18,10 @@ def encode_bilingual(msg, shift):
         - Korean Hangul syllables (가-힣) are shifted within the Hangul range
         - Everything else (numbers, punctuation, spaces) stays the same
 
-    To decrypt, call it again with the negative shift (e.g. 25 -> -25).
+    Encrypting and decrypting:
+        - A positive shift encrypts, and a negative shift decrypts
+        - In the menu, choose [D] and enter the SAME shift you encrypted
+          with (e.g. 25). The program flips it to -25 for you.
     """
 
     newmsg = ""
